@@ -1,0 +1,6 @@
+SELECT Sname
+FROM STUDENT
+WHERE GPA =
+        (SELECT MIN(GPA)
+         FROM STUDENT);
+
