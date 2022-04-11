@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE courses [
+    <!ELEMENT courses (course*)>
+    <!ELEMENT course (name, instructor, room, student+)>
+    <!ATTLIST course cid ID #REQUIRED>
+    <!ELEMENT student (name, email, grade)>
+    <!ATTLIST student sid CDATA #REQUIRED>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT instructor (#PCDATA)>
+    <!ELEMENT room (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT grade (#PCDATA)>
+]>
+<courses>
+    <course cid="CIS550">
+        <name>DBMS</name>
+        <instructor>Dr. Davidson</instructor>
+        <room>SKIRAUD</room>
+        <student sid="s01">
+            <name>Jim Halpert</name>
+            <email>j.halpert@cis.upenn.edu</email>
+            <grade>A</grade>
+        </student>
+        <student sid="s02">
+            <name>Dwight Schrute</name>
+            <email>schrutefarms@cis.upenn.edu</email>
+            <grade>B+</grade>
+        </student>
+        <student sid="s03">
+            <name>Nelly Bertram</name>
+            <email>n.bertram@cis.upenn.edu</email>
+            <grade>A-</grade>
+        </student>
+    </course>
+    <course cid="CIS552">
+        <name>Advanced Programming</name>
+        <instructor>Dr. Weirich</instructor>
+        <room>TOWNE321</room>
+        <student sid="s01">
+            <name>Jim Halpert</name>
+            <email>j.halpert@cis.upenn.edu</email>
+            <grade>A</grade>
+        </student>
+    </course>
+    <course cid="CIS500">
+        <name>Software Foundations</name>
+        <instructor>Dr. Pierce</instructor>
+        <room>MOORE216</room>
+        <student sid="s02">
+            <name>Dwight Schrute</name>
+            <email>schrutefarms@cis.upenn.edu</email>
+            <grade>B-</grade>
+        </student>
+    </course>
+</courses>

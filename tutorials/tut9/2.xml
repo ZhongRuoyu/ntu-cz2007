@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE emp [
+    <!ELEMENT emp (ename, children*, skills*)>
+    <!ELEMENT children (name, birthday)>
+    <!ELEMENT birthday (day, month, year)>
+    <!ELEMENT skills (type, exams+)>
+    <!ELEMENT exams (year, city)>
+    <!ELEMENT ename (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT day (#PCDATA)>
+    <!ELEMENT month (#PCDATA)>
+    <!ELEMENT year (#PCDATA)>
+    <!ELEMENT type (#PCDATA)>
+    <!ELEMENT city (#PCDATA)>
+]>
+<emp>
+    <ename>Name</ename>
+    <children>
+        <name>Child 1</name>
+        <birthday>
+            <day>1</day>
+            <month>1</month>
+            <year>2000</year>
+        </birthday>
+    </children>
+    <children>
+        <name>Child 2</name>
+        <birthday>
+            <day>1</day>
+            <month>1</month>
+            <year>2002</year>
+        </birthday>
+    </children>
+    <skills>
+        <type>Skill 1</type>
+        <exams>
+            <year>2020</year>
+            <city>Singapore</city>
+        </exams>
+    </skills>
+    <skills>
+        <type>Skill 2</type>
+        <exams>
+            <year>2022</year>
+            <city>Singapore</city>
+        </exams>
+    </skills>
+</emp>
