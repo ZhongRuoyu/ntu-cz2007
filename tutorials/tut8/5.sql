@@ -15,8 +15,8 @@ SELECT
          AND BOOKING.DAY = NEW.DAY
          AND BOOKING.MONTH = NEW.MONTH
          AND BOOKING.YEAR = NEW.YEAR )
-INTO @remaining;
-IF @remaining < 20 THEN
+INTO remaining;
+IF remaining < 20 THEN
     UPDATE FLIGHT
     SET PRICE = 4000
     WHERE FLIGHT.FLIGHTNO = NEW.FLIGHTNO
