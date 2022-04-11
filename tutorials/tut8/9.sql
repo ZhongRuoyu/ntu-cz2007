@@ -1,5 +1,5 @@
 CREATE TRIGGER registration_Insert
-BEFORE INSERT ON course
+BEFORE INSERT ON registration
 REFERENCING NEW ROW AS NewTuple
 FOR EACH ROW
 WHEN NOT EXISTS
@@ -12,7 +12,7 @@ END;
 
 
 CREATE TRIGGER registration_Update
-BEFORE UPDATE ON course
+BEFORE UPDATE ON registration
 REFERENCING NEW ROW AS NewTuple
 FOR EACH ROW
 WHEN NOT EXISTS
@@ -28,10 +28,6 @@ CREATE TRIGGER registration_Delete
 AFTER DELETE ON course
 REFERENCING OLD ROW AS OldTuple
 FOR EACH ROW
-WHEN NOT EXISTS
-    (SELECT registration.course_id
-     FROM registration
-     WHERE registration.course_id = OldTuple.course_id )
 BEGIN
     DELETE
     FROM course
