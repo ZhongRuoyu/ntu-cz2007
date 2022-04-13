@@ -24,8 +24,20 @@ BEGIN
 END;
 
 
-CREATE TRIGGER registration_Delete
-AFTER DELETE ON course
+CREATE TRIGGER course_Update
+BEFORE UPDATE ON course
+REFERENCING OLD ROW AS OldTuple
+FOR EACH ROW
+WHEN EXISTS
+    (SELECT course.course_id
+     FROM course
+     WHERE course.course_id = OldTuple.course_id )
+BEGIN
+    RAISE_EXCEPTION('FOREIGN KEY constraint was violated');
+END;
+
+CREATE TRIGGER course_Delete
+BEFORE DELETE ON course
 REFERENCING OLD ROW AS OldTuple
 FOR EACH ROW
 BEGIN
